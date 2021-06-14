@@ -7,3 +7,9 @@ tasks:
 ports:
   - port: 3000
     onOpen: open-preview
+
+vscode:
+  extensions:
+    - ritwickdey.liveserver
+    - esbenp.prettier-vscode
+    - rokoroku.vscode-theme-darcula
