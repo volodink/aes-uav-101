@@ -1,0 +1,22 @@
+{
+  "name": "aes-uav-101",
+  "version": "1.0.0",
+  "description": "Лекция \"Drones 101\" секции БПЛА, финал Воздушно-Инженерная Школа 10 (2020-2021)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/volodink/aes-uav-101.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/volodink/aes-uav-101/issues"
+  },
+  "homepage": "https://github.com/volodink/aes-uav-101#readme",
+  "dependencies": {
+    "reveal.js": "^4.1.3"
+  }
+}
