@@ -1,0 +1,34 @@
+image: registry.gitlab.com/volodink/aip:latest
+
+before_script:
+  - tree
+
+stages:
+  - build
+  - deploy
+
+build:
+  stage: build
+  script:
+    - rm -rf build
+    - rm -rf builds
+    - mkdir build
+    - npx @marp-team/marp-cli src/intro/intro.md -o build/intro.pdf
+    - npx @marp-team/marp-cli src/intro/testSlides.md -o build/testSlides.pdf
+    - npx @marp-team/marp-cli src/intro_2d_term/intro_2d_term.md -o build/intro_2d_term.pdf
+    - tree
+    - rm -rf builds
+  artifacts:
+    paths:
+      - "build/*.pdf"
+
+pages:
+  stage: deploy
+  script:
+    - mkdir public
+    - cp dist/intro.pdf public # copy the pdf file into the public folder
+  artifacts:
+    paths:
+      - public # instruct GitLab to keep the public folder
+  only:
+    - master # deploy the pdf only for commits made to the master branch

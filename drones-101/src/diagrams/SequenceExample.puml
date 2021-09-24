@@ -1,0 +1,24 @@
+@startuml SequenceExample
+skinparam dpi 150
+
+Bob->Alice : getProductsList<Product>()
+
+Alice->Alice : process()
+
+Alice->Bob : productsList<Product111>()
+
+Alice->Tom : testSomeShit<Product111>()
+
+Alice->Tom : testSomeShit<Product111>()
+
+Alice->Tom : testSomeShit<Product111>()
+
+Alice->Tom : testSomeShit<Product>()
+Alice->Tom : testSomeShit<Product111>()
+
+Tom->Elvis: songRequest11();
+
+Elvis->Tom: singSong11();
+Elvis->Tom: singSong11();
+
+@enduml
