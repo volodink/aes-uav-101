@@ -6,9 +6,6 @@ all: clean
 live:
 	marp -p --server ./src
 
-ci:
-	gitlab-runner exec shell build
-
 clean:
 	rm -rf dist
 	rm -rf build

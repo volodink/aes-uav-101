@@ -23,18 +23,15 @@ RUN apk update && apk upgrade && \
       zsh@edge \
       alpine-sdk \
       nss@edge \
-      docker-cli openrc iptables ca-certificates dumb-init git-lfs openssl tzdata wget bash bash-doc bash-completion shadow util-linux build-base gcc abuild binutils binutils-doc gcc-doc cmake cmake-doc extra-cmake-modules extra-cmake-modules-doc ccache ccache-doc pciutils usbutils coreutils binutils findutils grep
+      openrc iptables ca-certificates dumb-init git-lfs openssl tzdata wget \
+      bash bash-doc bash-completion \
+      shadow \
+      util-linux build-base gcc abuild binutils binutils-doc gcc-doc \
+      cmake cmake-doc extra-cmake-modules extra-cmake-modules-doc \
+      ccache ccache-doc pciutils usbutils coreutils binutils findutils grep
 
 RUN npm install -g @marp-team/marp-cli
 RUN npm install -g markdown-it-plantuml
-
-RUN apk update && \
-    apk add 
-RUN wget -O /usr/bin/gitlab-runner https://gitlab-runner-downloads.s3.amazonaws.com/latest/binaries/gitlab-runner-linux-amd64 && \
-	chmod +x /usr/bin/gitlab-runner && \
-	ln -s /usr/bin/gitlab-runner /usr/bin/gitlab-ci-multi-runner && \
-	mkdir -p /etc/gitlab-runner/certs && \
-	chmod -R 700 /etc/gitlab-runner
 
 USER node
 
