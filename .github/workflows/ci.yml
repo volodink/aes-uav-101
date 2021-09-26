@@ -24,8 +24,8 @@ jobs:
         with:
           node-version: '16'
 
-      - name: Install sudo package
-        run: sudo apt update && sudo install sudo
+      # - name: Install sudo package
+      #   run: sudo apt update && sudo install sudo
 
       - name: Install dependencies
         run: |
