@@ -1,0 +1,77 @@
+/* @theme lection */
+
+@import "gaia";
+
+section {
+  background: #ffffff;
+  color: #000000;
+  font-family: Arial;
+  font-size: 24pt;
+  padding: 40px;
+}
+
+section.invert {
+  background: #000;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+}
+
+section.contacts img {
+  vertical-align: middle;
+}
+
+section.linux img {
+  vertical-align: middle;
+}
+
+section.oneline {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+}
+
+section.manylines {
+  background: #ffffff;
+  color: #000000;
+  font-family: Arial;
+  font-size: 19pt;
+  padding: 40px;
+}
+
+section.manylines2 {
+  background: #ffffff;
+  color: #000000;
+  font-family: Arial;
+  font-size: 19pt;
+  padding: 40px;
+}
+
+section.imagewall img {
+  vertical-align: middle;
+  padding-right: 50px;
+}
+
+section.imagewall p {
+  margin: 3em 0 0;
+  text-align: center;
+}
+
+section.diagram img {
+  vertical-align: middle;
+}
+
+section.diagram p {
+  text-align: center;
+}
+
+h1 {
+  font-size: 30pt;
+}
+
+h2 {
+  font-size: 24pt;
+}

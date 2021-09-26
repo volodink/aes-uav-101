@@ -1,0 +1,82 @@
+{
+  "name": "fire_detect: MARP + DiD",
+  "dockerFile": "Dockerfile",
+  "runArgs": ["--init"],
+  "mounts": [ "source=/var/run/docker.sock,target=/var/run/docker.sock,type=bind" ],
+  
+  // Set *default* container specific settings.json values on container create.
+  "settings": {
+    "terminal.integrated.automationShell.linux": "/bin/bash",
+    "terminal.integrated.automationShell.osx": "/bin/bash",
+    "terminal.integrated.automationShell.windows": "/bin/bash",
+
+    "terminal.integrated.fontFamily": "Consolas, 'Courier New', monospace",
+
+    "workbench.colorTheme": "One Dark Pro",
+    "workbench.iconTheme": "vs-minimal",
+
+    "editor.fontSize": 18,
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true,
+
+    "diffEditor.wordWrap": "on",
+    "editor.wordWrapColumn": 80,
+
+    "editor.fontLigatures": true,
+
+    "files.autoSave": "afterDelay",
+    "files.autoSaveDelay": 300,
+
+    "runOnSave.statusMessageTimeout": 3000,
+    "runOnSave.commands": [
+      {
+        "match": ".*\\.puml",
+        "command": "plantuml.exportDocument",
+        "runIn": "vscode"
+      }
+    ],
+
+    "markdown.marp.themes": ["themes/lection.css"],
+
+    // PlantUML extension settings
+    "[plantuml]": {
+      "editor.defaultFormatter": null
+    },
+    "plantuml.render": "PlantUMLServer",
+    "plantuml.server": "https://www.plantuml.com/plantuml/",
+    "plantuml.exportFormat": "png",
+    "plantuml.diagramsRoot": ".",
+    "plantuml.exportOutDir": ".",
+    "plantuml.exportSubFolder": false
+  },
+
+  // Add the IDs of extensions you want installed when the container is created.
+  "extensions": [
+    "zhuangtongfa.Material-theme",
+    "dbaeumer.vscode-eslint",
+
+    "isudox.vscode-jetbrains-keybindings",
+
+    "esbenp.prettier-vscode",
+    "coenraads.bracket-pair-colorizer-2",
+
+    "marp-team.marp-vscode",
+    "tomoki1207.pdf",
+
+    "pucelle.run-on-save",
+
+    "jebbs.plantuml"
+  ],
+
+  // Use 'forwardPorts' to make a list of ports inside the container available locally.
+  "forwardPorts": [80, 3000, 5000, 8000, 8080, 9000],
+
+  // Use 'postCreateCommand' to run commands after the container is created.
+  // "postCreateCommand": "",
+
+  "containerEnv": {
+    "CHOKIDAR_USEPOLLING": "true"
+  },
+
+  "remoteUser": "node"
+}
