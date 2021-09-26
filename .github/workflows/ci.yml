@@ -44,4 +44,12 @@ jobs:
 
       - name: Build artifacts for drones-101
         run: |
-          cd drones-101 && make 
+          cd drones-101 && make
+      
+    - name: Upload pdf document
+      uses: actions/upload-artifact@v2
+      with:
+        name: my_doc
+        path: drones-101/dist/drones-101/drones-101.pdf
+    
+          
