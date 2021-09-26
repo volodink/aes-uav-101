@@ -49,7 +49,7 @@ jobs:
       - name: Upload pdf document
         uses: actions/upload-artifact@v2
         with:
-          name: my_doc
+          name: drones-101
           path: drones-101/dist/drones-101/drones-101.pdf
     
           
