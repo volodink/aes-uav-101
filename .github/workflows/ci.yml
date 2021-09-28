@@ -65,7 +65,7 @@ jobs:
           tar xzvf gdrive_2.1.1_linux_386.tar.gz
           chmod +x gdrive
           mv gdrive /usr/local/bin/gdrive
-          mkdir -p ~/.gdrive && echo $GDRIVE_TOKEN > ~/.gdrive/token_v2.json
+          mkdir -p ~/.gdrive && echo "$GDRIVE_TOKEN" > ~/.gdrive/token_v2.json
           # mkdir -p ~/.gdrive && cp token_v2.json | base64 --decode > ~/.gdrive/token_v2.json
           echo ${{ secrets.CI_GDRIVE_TOKEN }}
           gdrive list
