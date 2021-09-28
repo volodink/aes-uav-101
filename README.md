@@ -1,8 +1,6 @@
 ### Лекции и мастер-классы курсов повышения квалификации (КПК) преподавателей в рамках финала 10-го российского чемпионата проекта "Воздушно-инженерная школа" (CanSAT в России)
 
-
 ### 1. Лекции
-
 
 _Лига Беспилотник: задачи, опыт участия и как меньше падать_
 
@@ -18,11 +16,11 @@ _Лига Беспилотник: задачи, опыт участия и ка�
 
 _Лига Беспилотник: Поиск очага возгорания: задачи и алгоритмы_
 
-Папка проекта: [firedetector-101](https://github.com/volodink/aes-uav-101/tree/dev/firedetector-101)
+Папка проекта: [firedetector-101](https://github.com/volodink/aes-uav-101/tree/dev/firedetection-101)
 
-Онлайн версия: [тут](https://volodink.github.io/aes-uav-101/firedetector-101/live/index.html)
+Онлайн версия: [тут](https://volodink.github.io/aes-uav-101/firedetection-101/live/index.html)
 
-Скачать PDF: [тут](https://volodink.github.io/aes-uav-101/firedetector-101/drones-101.pdf)
+Скачать PDF: [тут](https://volodink.github.io/aes-uav-101/firedetection-101/firedetection-101.pdf)
 
 
 _Platformio: экосистема для разработки встраиваемых систем или новый взгляд на вселенную Arduino_
@@ -36,12 +34,13 @@ _Platformio: экосистема для разработки встраивае
 
 _Google Coral: ML-ускоритель для задач распознавания образов_
 
-Папка проекта: [firedetector-ml-101](https://github.com/volodink/aes-uav-101/tree/dev/firedetector-ml-101)
+Папка проекта: [firedetector-ml-101](https://github.com/volodink/aes-uav-101/tree/dev/firedetection-ml-101)
 
-Онлайн версия: [тут](https://volodink.github.io/aes-uav-101/firedetector-ml-101/live/index.html)
+Онлайн версия: [тут](https://volodink.github.io/aes-uav-101/firedetection-ml-101/live/index.html)
 
-Скачать PDF: [тут](https://volodink.github.io/aes-uav-101/firedetector-ml-101/firedetector-ml.pdf)
+Скачать PDF: [тут](https://volodink.github.io/aes-uav-101/firedetection-ml-101/firedetection-ml-101.pdf)
 
 ---
 
 Подробнее о проекте: [roscansat.com](http://www.roscansat.com/)
+
