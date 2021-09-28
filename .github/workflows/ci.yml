@@ -58,7 +58,7 @@ jobs:
           make
 
       - name: Deploy to GDrive
-        with:
+        env:
           GDRIVE_TOKEN: ${{ secrets.CI_GDRIVE_TOKEN }}
         run: |
           wget https://github.com/prasmussen/gdrive/releases/download/2.1.1/gdrive_2.1.1_linux_386.tar.gz
