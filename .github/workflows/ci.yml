@@ -18,38 +18,57 @@ jobs:
     steps:
       - uses: actions/checkout@v2
         with:
-          submodules: true  
+          submodules: true
 
       - uses: actions/setup-node@v2
         with:
-          node-version: '16'
+          node-version: "16"
 
-      # - name: Install sudo package
-      #   run: sudo apt update && sudo install sudo
+      # - name: Install some stuff
+      #   run: apt update && apt install -y wget
+
+      # - name: Install dependencies
+      #   run: |
+      #     sudo apt-get update && sudo apt-get install -y curl zsh wget build-essential gnupg fonts-ipafont-gothic fonts-wqy-zenhei fonts-thai-tlwg fonts-kacst fonts-freefont-ttf libxss1
 
       - name: Install dependencies
         run: |
           sudo apt-get update && sudo apt-get install -y curl zsh wget build-essential gnupg fonts-ipafont-gothic fonts-wqy-zenhei fonts-thai-tlwg fonts-kacst fonts-freefont-ttf libxss1
 
+      # - name: Install Google Chrome
+      #   run: |
+      #     sudo wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
+      #     sudo sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google-chrome.list'
+      #     sudo apt-get update
+      #     sudo apt-get install -y google-chrome-unstable
+
       - name: Install Google Chrome
         run: |
-          sudo wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
-          sudo sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google-chrome.list'
-          sudo apt-get update
-          sudo apt-get install -y google-chrome-unstable
-      
+          wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add -
+          sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google-chrome.list'
+          apt-get update
+          apt-get install -y google-chrome-unstable
+
       - name: Install MARP
         run: |
           npm install -g @marp-team/marp-cli
 
-      - name: Build artifacts for drones-101
+      - name: Build artifacts
         run: |
-          cd drones-101 && make
-      
-      - name: Upload pdf document
-        uses: actions/upload-artifact@v2
-        with:
-          name: drones-101
-          path: drones-101/dist/drones-101/drones-101.pdf
-    
-          
+          make
+
+      - name: Deploy to GDrive
+        run: |
+          wget https://github.com/prasmussen/gdrive/releases/download/2.1.1/gdrive_2.1.1_linux_386.tar.gz
+          tar xzvf gdrive_2.1.1_linux_386.tar.gz
+          chmod +x gdrive
+          mv gdrive /usr/local/bin/gdrive
+          mkdir -p ~/.gdrive && echo ${{ secrets.CI_GDRIVE_TOKEN }} > ~/.gdrive/token_v2.json
+          # mkdir -p ~/.gdrive && cp token_v2.json ~/.gdrive/token_v2.json
+          gdrive list
+          gdrive list --query "name contains 'cansat2021'" --no-header --max 0 | cut -d" " -f1 - | xargs -L 1 gdrive delete -r
+          gdrive mkdir cansat2021
+          export TARGET_FOLDER=`gdrive list --query "name contains 'cansat2021'" --no-header --max 0 | cut -d" " -f1 -`
+          gdrive upload --parent $TARGET_FOLDER drones-101/dist/drones-101/drones-101.pdf
+          gdrive upload --parent $TARGET_FOLDER firedetection-101/lecture/dist/firedetection-101/firedetection-101.pdf
+          gdrive upload --parent $TARGET_FOLDER platformio-101/lecture/dist/platformio-101/platformio-101.pdf
