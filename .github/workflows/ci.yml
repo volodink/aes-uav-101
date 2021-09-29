@@ -87,6 +87,9 @@ jobs:
           # Remove all PDF artifacts
           gdrive list --query "name contains 'can2021_pdf'" --no-header --max 0 | cut -d" " -f1 - | xargs -L 1 gdrive delete -r
 
+          # Remove all ZIP artifacts
+          gdrive list --query "name contains 'can2021_zip'" --no-header --max 0 | cut -d" " -f1 - | xargs -L 1 gdrive delete -r
+
           # Creates directory for PDF artifacts
           export TARGET_PDF_PARENT_FOLDER=`gdrive mkdir --parent $TARGET_PARENT_FOLDER can2021_pdf | cut -d" " -f2 -`
           # echo "Target parent PDF folder:" $TARGET_PDF_PARENT_FOLDER
