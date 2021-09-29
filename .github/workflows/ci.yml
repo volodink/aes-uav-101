@@ -95,3 +95,10 @@ jobs:
           gdrive upload --parent $TARGET_PDF_PARENT_FOLDER drones-101/dist/drones-101/drones-101.pdf
           gdrive upload --parent $TARGET_PDF_PARENT_FOLDER firedetection-101/lecture/dist/firedetection-101/firedetection-101.pdf
           gdrive upload --parent $TARGET_PDF_PARENT_FOLDER platformio-101/lecture/dist/platformio-101/platformio-101.pdf
+
+          # Creates directory for PDF artifacts
+          export TARGET_ZIP_PARENT_FOLDER=`gdrive mkdir --parent $TARGET_PARENT_FOLDER can2021_zip | cut -d" " -f2 -`
+          # echo "Target parent ZIP folder:" $TARGET_ZIP_PARENT_FOLDER
+
+          # Now upload archives
+          gdrive upload --parent $TARGET_ZIP_PARENT_FOLDER firedetection-101/dist/firedetector-final.zip
