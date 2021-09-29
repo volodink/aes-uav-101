@@ -3,3 +3,4 @@ venv
 .venv
 .env
 token_v2.json
+dist

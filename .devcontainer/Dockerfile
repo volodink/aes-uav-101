@@ -28,7 +28,8 @@ RUN apk update && apk upgrade && \
       shadow \
       util-linux build-base gcc abuild binutils binutils-doc gcc-doc \
       cmake cmake-doc extra-cmake-modules extra-cmake-modules-doc \
-      ccache ccache-doc pciutils usbutils coreutils binutils findutils grep sudo
+      ccache ccache-doc pciutils usbutils coreutils binutils findutils grep sudo \
+      zip
 
 RUN npm install -g @marp-team/marp-cli
 RUN npm install -g markdown-it-plantuml
