@@ -1,5 +1,6 @@
 tmp
 dist
+src/diagrams/*.png
 
 # Byte-compiled / optimized / DLL files
 builds
