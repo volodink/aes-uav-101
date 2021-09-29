@@ -24,6 +24,51 @@ frame_width = 1280
 frame_height = 720
 
 
+def get_multiview_composition(images, screen_height, screen_width):
+    color_images = []
+    for image in images:
+        if len(image.shape) != 3:
+            color_images.append(cv2.cvtColor(image, cv2.COLOR_GRAY2RGB))
+        else:
+            color_images.append(image)
+
+    fill_color = (35, 35, 35)  # dark gray
+    result = np.full((screen_height, screen_width, 3), fill_color, dtype=np.uint8)
+
+    resized_image_height = screen_height // 2
+
+    r = resized_image_height / image.shape[1]
+    dim = (resized_image_height, int(image.shape[0] * r))
+
+    resized_images = []
+    for image in color_images:
+        resized_images.append(cv2.resize(image, dim, interpolation=cv2.INTER_LANCZOS4))
+
+    padding = 50
+
+    result[padding:int(image.shape[0] * r)+padding, padding:resized_image_height+padding] = resized_images[0]
+    result[padding:int(image.shape[0] * r)+padding, 2*padding+resized_image_height:2*resized_image_height+2*padding] = resized_images[1]
+    result[padding:int(image.shape[0] * r)+padding, 3*padding+2*resized_image_height:3*resized_image_height+3*padding] = resized_images[2]
+
+    result[2*padding+int(image.shape[0] * r):2*int(image.shape[0] * r)+2*padding, padding:resized_image_height+padding] = resized_images[3]
+    result[2*padding+int(image.shape[0] * r):2*int(image.shape[0] * r)+2*padding, 2*padding+resized_image_height:2*resized_image_height+2*padding] = resized_images[4]
+    result[2*padding+int(image.shape[0] * r):2*int(image.shape[0] * r)+2*padding, 3*padding+2*resized_image_height:3*resized_image_height+3*padding] = resized_images[5]
+    
+    return result
+
+
+def create_test_image(screen_height, screen_width, square_size):
+    test_squares_image = np.ones((screen_height, screen_width, 3), dtype=np.float32)
+    test_squares_image[:square_size, :square_size] = 0  # black at top-left corner
+    test_squares_image[screen_height - square_size:, :square_size] = [1, 0,
+                                                                      0]  # blue at bottom-left
+    test_squares_image[:square_size, screen_width - square_size:] = [0, 1,
+                                                                     0]  # green at top-right
+    test_squares_image[screen_height - square_size:, screen_width - square_size:] = [0, 0,
+                                                                                     1]  # red at bottom-right
+    return test_squares_image
+
+
 def main():
     print(f'OpenCV version: {cv2.__version__}')
 
@@ -36,7 +81,7 @@ def main():
     test_squares_image = create_test_image(screen_height, screen_width, test_image_square_size)
     test_squares_image_2 = create_test_image(screen_height, screen_width, test_image_square_size * 2)
 
-    projected_image_selector = {"scene": "image_from_camera"}
+    projected_image_selector = {"scene": "multiview"}
     bypass_gaussian = False
 
     show_hud = True
@@ -137,6 +182,8 @@ def main():
             projected_image_selector["scene"] = "test_squares_image"
         elif key == ord('9'):
             projected_image_selector["scene"] = "test_squares_image_2"
+        elif key == ord('0'):
+            projected_image_selector["scene"] = "multiview"
 
         # Set image to be projected
         if projected_image_selector["scene"] == "image_from_camera":
@@ -151,6 +198,9 @@ def main():
             projected_image[shift_y:frame_height + shift_y, shift_x:frame_width + shift_x] = cv2.cvtColor(image_erode, cv2.COLOR_GRAY2RGB)
         elif projected_image_selector["scene"] == "image_dilation":
             projected_image[shift_y:frame_height + shift_y, shift_x:frame_width + shift_x] = cv2.cvtColor(image_dilation, cv2.COLOR_GRAY2RGB)
+        elif projected_image_selector["scene"] == "multiview":
+            images = [image_from_camera, image_grayscale, image_gaussian, image_threshold, image_erode, image_dilation]
+            projected_image = get_multiview_composition(images, screen_height, screen_width)
         elif projected_image_selector["scene"] == "test_squares_image":
             projected_image = test_squares_image
         elif projected_image_selector["scene"] == "test_squares_image_2":
@@ -163,13 +213,12 @@ def main():
         else:
             avg_fps_counter += 1
 
-        if show_hud:
+        if show_hud and projected_image_selector["scene"] != "multiview":
             # Output FPS counter
             font = cv2.FONT_HERSHEY_SIMPLEX
             cv2.putText(projected_image, f'FPS: {fps:.3f}', (0, 25), font, 1, (255, 255, 255), 2, cv2.LINE_AA)
 
             if box != []:
-
                 # Draw box
                 box[:, 0] += shift_x
                 box[:, 1] += shift_y
@@ -201,33 +250,6 @@ def main():
     camera0_capture.release()
 
     print('Have a nice day! :)')
-
-
-def create_test_image(screen_height, screen_width, square_size):
-    test_squares_image = np.ones((screen_height, screen_width, 3), dtype=np.float32)
-    test_squares_image[:square_size, :square_size] = 0  # black at top-left corner
-    test_squares_image[screen_height - square_size:, :square_size] = [1, 0,
-                                                                      0]  # blue at bottom-left
-    test_squares_image[:square_size, screen_width - square_size:] = [0, 1,
-                                                                     0]  # green at top-right
-    test_squares_image[screen_height - square_size:, screen_width - square_size:] = [0, 0,
-                                                                                     1]  # red at bottom-right
-    return test_squares_image
-
-
-def show_hud_information(img, box, rect):
-    if box == [] or rect == []:
-        return
-    print(box)
-    cv2.drawContours(img, [box], 0, (255, 0, 0), 2)
-#
-#     cv2.circle(projected_image, (int(rect[0][0]), int(rect[0][1])), 10, (255, 0, 0), -1)
-#
-#     # height, width = eval(projected_image_selector["scene"]).shape[:2]
-#     # cv2.line(eval(projected_image_selector["scene"]), (int(rect[0][0]), int(rect[0][1])), (int(rect[0][0]), height), (0, 0, 255), 2)
-#     # cv2.line(eval(projected_image_selector["scene"]), (int(rect[0][0]), int(rect[0][1])), (int(rect[0][0]), 0), (0, 0, 255), 2)
-#     # cv2.line(eval(projected_image_selector["scene"]), (int(rect[0][0]), int(rect[0][1])), (width, int(rect[0][1])), (0, 0, 255), 2)
-#     # cv2.line(eval(projected_image_selector["scene"]), (int(rect[0][0]), int(rect[0][1])), (0, int(rect[0][1])), (0, 0, 255), 2)
 
 
 if __name__ == '__main__':
