@@ -24,8 +24,8 @@ jobs:
       #   with:
       #     node-version: "16"
 
-      - name: Install some stuff
-        run: apt update && sudo apt install -y wget
+      # - name: Install some stuff
+      #   run: apt update && sudo apt install -y wget
 
       # - name: Install dependencies
       #   run: |
