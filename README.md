@@ -6,41 +6,24 @@ _Лига Беспилотник: задачи, опыт участия и ка�
 
 Папка проекта: [drones-101](https://github.com/volodink/aes-uav-101/tree/dev/drones-101)
 
-Онлайн версия: [тут](https://volodink.github.io/aes-uav-101/drones-101/live/index.html)
-
-Скачать PDF: [тут](https://volodink.github.io/aes-uav-101/drones-101/drones-101.pdf)
-
-
 ### 2. Мастер-классы
-
 
 _Лига Беспилотник: Поиск очага возгорания: задачи и алгоритмы_
 
 Папка проекта: [firedetector-101](https://github.com/volodink/aes-uav-101/tree/dev/firedetection-101)
 
-Онлайн версия: [тут](https://volodink.github.io/aes-uav-101/firedetection-101/live/index.html)
-
-Скачать PDF: [тут](https://volodink.github.io/aes-uav-101/firedetection-101/firedetection-101.pdf)
-
-
 _Platformio: экосистема для разработки встраиваемых систем или новый взгляд на вселенную Arduino_
 
 Папка проекта: [platformio-101](https://github.com/volodink/aes-uav-101/tree/dev/platformio-101)
-
-Онлайн версия: [тут](https://volodink.github.io/aes-uav-101/platformio-101/live/index.html)
-
-Скачать PDF: [тут](https://volodink.github.io/aes-uav-101/platformio-101/platformio-101.pdf)
-
 
 _Google Coral: ML-ускоритель для задач распознавания образов_
 
 Папка проекта: [firedetector-ml-101](https://github.com/volodink/aes-uav-101/tree/dev/firedetection-ml-101)
 
-Онлайн версия: [тут](https://volodink.github.io/aes-uav-101/firedetection-ml-101/live/index.html)
+---
 
-Скачать PDF: [тут](https://volodink.github.io/aes-uav-101/firedetection-ml-101/firedetection-ml-101.pdf)
+Презентации и дополнительные файлы можно найти [тут](https://drive.google.com/drive/folders/1w0w9rLx5d-pbX2hD0voHcD0BswQJEfVo?usp=sharing) (GDrive папка)
 
 ---
 
 Подробнее о проекте: [roscansat.com](http://www.roscansat.com/)
-
