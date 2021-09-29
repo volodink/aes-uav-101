@@ -59,19 +59,16 @@ jobs:
 
       - name: Deploy to GDrive
         env:
-          GDRIVE_TOKEN: ${{ secrets.CI_GDRIVE_TOKEN }}
+          GTOKEN_PASS: ${{ secrets.CI_GDRIVE_TOKEN_PASSPHRASE }}
         run: |
-          echo "Trick to echo GitHub Actions Secret:  "
-          echo ${{secrets.CI_GDRIVE_TOKEN}} | sed 's/./& /g' 
-          # wget https://github.com/prasmussen/gdrive/releases/download/2.1.1/gdrive_2.1.1_linux_386.tar.gz
-          # tar xzvf gdrive_2.1.1_linux_386.tar.gz
-          # chmod +x gdrive
-          # mv gdrive /usr/local/bin/gdrive
-          # mkdir -p ~/.gdrive
-          # echo env.GDRIVE_TOKEN | base64 --decode > ~/.gdrive/token_v2.json
-          # echo "file end." >> ~/.gdrive/token_v2.json
-          # cat ~/.gdrive/token_v2.json
-          # gdrive list
+          wget https://github.com/prasmussen/gdrive/releases/download/2.1.1/gdrive_2.1.1_linux_386.tar.gz
+          tar xzvf gdrive_2.1.1_linux_386.tar.gz
+          chmod +x gdrive
+          mv gdrive /usr/local/bin/gdrive
+          mkdir -p ~/.gdrive
+          gpg --quiet --batch --yes --decrypt --passphrase="$GTOKEN_PASS" \
+--output ~/.gdrive/token_v2.json .github/workflows/token_v2.json.gpg
+          gdrive list
           # gdrive list --query "name contains 'cansat2021'" --no-header --max 0 | cut -d" " -f1 - | xargs -L 1 gdrive delete -r
           # gdrive mkdir cansat2021
           # export TARGET_FOLDER=`gdrive list --query "name contains 'cansat2021'" --no-header --max 0 | cut -d" " -f1 -`
