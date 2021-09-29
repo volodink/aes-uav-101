@@ -66,8 +66,7 @@ jobs:
           chmod +x gdrive
           mv gdrive /usr/local/bin/gdrive
           mkdir -p ~/.gdrive
-          gpg --quiet --batch --yes --decrypt --passphrase="$GTOKEN_PASS" \
---output ~/.gdrive/token_v2.json .github/workflows/token_v2.json.gpg
+          gpg --quiet --batch --yes --decrypt --passphrase="$GTOKEN_PASS" --output ~/.gdrive/token_v2.json .github/workflows/token_v2.json.gpg
           gdrive list
           # gdrive list --query "name contains 'cansat2021'" --no-header --max 0 | cut -d" " -f1 - | xargs -L 1 gdrive delete -r
           # gdrive mkdir cansat2021
