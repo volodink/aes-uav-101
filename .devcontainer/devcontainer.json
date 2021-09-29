@@ -6,9 +6,9 @@
   
   // Set *default* container specific settings.json values on container create.
   "settings": {
-    "terminal.integrated.automationShell.linux": "/bin/bash",
-    "terminal.integrated.automationShell.osx": "/bin/bash",
-    "terminal.integrated.automationShell.windows": "/bin/bash",
+    "terminal.integrated.automationShell.linux": "/bin/zsh",
+    "terminal.integrated.automationShell.osx": "/bin/zsh",
+    "terminal.integrated.automationShell.windows": "/bin/zsh",
 
     "terminal.integrated.fontFamily": "Consolas, 'Courier New', monospace",
 
