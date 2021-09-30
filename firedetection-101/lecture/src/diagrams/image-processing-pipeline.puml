@@ -1,6 +1,6 @@
 @startuml image-processing-pipeline
 skinparam defaultTextAlignment center
-skinparam dpi 150
+skinparam dpi 270
 skinparam nodesep 50
 
 ' left to right direction
@@ -9,8 +9,8 @@ rectangle "RGB2GRAY" as GRAY
 rectangle "Размытие \nпо Гауссу" as GAUSS
 rectangle "Пороговая \nфильтрация \n(бинаризация)" as THRESHOLD
 
-Camera -> GRAY: "bgr frame"
-GRAY -> GAUSS: "gray frame"
+Camera -> GRAY: "bgr\nframe"
+GRAY -> GAUSS: "gray\nframe"
 GAUSS -> THRESHOLD
 THRESHOLD -> bin_frame
 

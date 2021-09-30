@@ -1,6 +1,6 @@
 @startuml image-processing-pipeline-3
 skinparam defaultTextAlignment center
-skinparam dpi 600
+skinparam dpi 280
 skinparam nodesep 60
 ' left to right direction
 

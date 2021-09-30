@@ -55,11 +55,11 @@ BN850 filter: https://midopt.com/filters/bn850/
 
 # Конвейер обработки изображения с камеры
 
-![](diagrams/image-processing-pipeline.png)
+![w:1200px](diagrams/image-processing-pipeline.png)
 
-![](diagrams/image-processing-pipeline-2.png)
+![w:1200px](diagrams/image-processing-pipeline-2.png)
 
-![w:300px](diagrams/image-processing-pipeline-3.png)
+![w:1200px](diagrams/image-processing-pipeline-3.png)
 
 ---
 
