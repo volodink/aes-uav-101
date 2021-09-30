@@ -1,0 +1,11 @@
+@startuml deployment-1
+skinparam defaultTextAlignment center
+skinparam dpi 600
+left to right direction
+
+rectangle "Полетная часть" as FC
+rectangle "Подсистема обнаружения \n очага возгорания" as Firedetector
+
+FC --> Firedetector: UART, MAVLink  
+
+@enduml

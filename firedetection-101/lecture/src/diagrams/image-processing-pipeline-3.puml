@@ -1,0 +1,17 @@
+@startuml image-processing-pipeline-3
+skinparam defaultTextAlignment center
+skinparam dpi 600
+skinparam nodesep 60
+' left to right direction
+
+rectangle "minAreaRect" as minarearect
+rectangle "Отрисовка \nпараметров" as showhud
+rectangle "imshow" as showpic
+
+
+contour_not_None -> minarearect
+minarearect -> showhud
+showhud -> showpic
+showpic -> next_stage
+
+@enduml

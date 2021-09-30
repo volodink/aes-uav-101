@@ -60,7 +60,16 @@ section.imagewall p {
   text-align: center;
 }
 
+/* section.diagram { */
+  /* display: flex; */
+  /* justify-content: center; */
+/* } */
+
 section.diagram img {
+  /* display: flex;
+  align-items: center; */
+  /* position: absolute; */
+  /* margin-top: 15%; */
   vertical-align: middle;
 }
 
@@ -74,4 +83,32 @@ h1 {
 
 h2 {
   font-size: 24pt;
+}
+
+section.diagram_15 {
+  vertical-align: middle;
+}
+
+
+section.diagram_15 img {
+  margin-top: 15%;
+  /* vertical-align: middle; */
+}
+
+section.diagram_15 p {
+  text-align: center;
+}
+
+section.diagram_1 {
+  vertical-align: middle;
+}
+
+
+section.diagram_1 img {
+  margin-top: 1%;
+  /* vertical-align: middle; */
+}
+
+section.diagram_1 p {
+  text-align: center;
 }

@@ -1,0 +1,19 @@
+@startuml image-processing-pipeline-2
+skinparam defaultTextAlignment center
+skinparam dpi 150
+skinparam nodesep 45
+
+' left to right direction
+
+rectangle "Эрозия" as ERODE
+rectangle "Расширение" as DILATE
+rectangle "Нахождение \nконтуров" as CONTOUR
+rectangle "Выбор контура \nс максимальной \nплощадью" as MAX_CONTOUR
+
+bin_frame -> ERODE
+ERODE -> DILATE
+DILATE -> CONTOUR
+CONTOUR -> MAX_CONTOUR
+MAX_CONTOUR -> contour
+
+@enduml
