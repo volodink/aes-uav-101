@@ -3,7 +3,7 @@ all: clean
 	cd drones-101 && make
 	cd firedetection-101/lecture && make
 	cd platformio-101/lecture && make
-	cd firedetection-101 && mkdir dist && zip -r dist/firedetector-final.zip firedetector-final/firedetector-final.py firedetector-final/requirements.txt
+	cd firedetection-101 && mkdir dist && zip -r dist/firedetector-final.zip firedetector-final/*.py firedetector-final/*.txt
 	
 clean:
 	echo "Cleaup."
