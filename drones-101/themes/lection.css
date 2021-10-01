@@ -75,3 +75,19 @@ h1 {
 h2 {
   font-size: 24pt;
 }
+
+section.invert2_10 {
+  text-align: center;
+}
+
+section.invert2_10 h1 {
+  margin-top: 10%;
+}
+
+section.invert2_2 {
+  text-align: center;
+}
+
+section.invert2_2 h1 {
+  margin-top: 20%;
+}

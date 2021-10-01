@@ -16,6 +16,7 @@ size: 16:9
 
 <!-- _class: invert -->
 <!-- _paginate: false -->
+<!-- background: yellow -- >
 
 # <!-- fit -->Ранее в сериале ...
 
