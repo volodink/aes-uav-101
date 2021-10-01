@@ -133,6 +133,39 @@ https://www.youtube.com/watch?v=0aHXrUHTxP0
 ![h:550px](img/zagruzheno.png)
 
 ---
+<!-- _class: invert -->
+<!-- _paginate: false -->
+
+![bg w:100%](img/few.png)
+
+---
+<!-- _class: invert -->
+
+# Улучшенный алгоритм распознавания и принятия решения
+
+---
+<!-- _class: invert -->
+
+![bg w:50%](img/new-detector.gif)
+
+
+---
+<!-- _class: invert -->
+<!-- _paginate: false -->
+
+![bg w:100%](img/more.png)
+
+
+
+
+
+
+
+
+
+
+
+---
 
 # <!-- fit --> Часть 3. ~~Вредные~~ Советы бывалых
 
