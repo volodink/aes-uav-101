@@ -53,7 +53,7 @@ jobs:
           GTOKEN_PASS: ${{ secrets.CI_GDRIVE_TOKEN_PASSPHRASE }}
         run: |
           mkdir -p ~/.gdrive
-          gpg --quiet --batch --yes --decrypt --passphrase="secrets.CI_GDRIVE_TOKEN_PASSPHRASE" --output ~/.gdrive/token_v2.json .github/workflows/token_v2.json.gpg
+          gpg --quiet --batch --yes --decrypt --passphrase="$CI_GDRIVE_TOKEN_PASSPHRASE" --output ~/.gdrive/token_v2.json .github/workflows/token_v2.json.gpg
 
       - name: Install GDrive
         run: |
