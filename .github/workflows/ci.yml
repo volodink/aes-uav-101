@@ -56,6 +56,8 @@ jobs:
           gpg --quiet --batch --yes --decrypt --passphrase="$CI_GDRIVE_TOKEN_PASSPHRASE" --output ~/.gdrive/token_v2.json .github/workflows/token_v2.json.gpg
 
       - name: Install GDrive
+        env:
+          GTOKEN_PASS: ${{ secrets.CI_GDRIVE_TOKEN_PASSPHRASE }}
         run: |
           wget https://github.com/prasmussen/gdrive/releases/download/2.1.1/gdrive_2.1.1_linux_386.tar.gz
           tar xzvf gdrive_2.1.1_linux_386.tar.gz
