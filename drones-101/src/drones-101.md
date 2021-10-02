@@ -130,11 +130,19 @@ __Информационное письмо__ тоже имеет значени
 
 
 ---
+<!-- _class: diagram -->
 
-# Виды беспилотных летательных аппаратов БЛА
+# Виды беспилотных летательных аппаратов (БЛА)
 
-https://www.youtube.com/watch?v=0aHXrUHTxP0
+![h:220px](img/uav-plane.jpg) ![h:220px](img/uav-multi.jpg)
 
+![h:220px](img/uav-vtol.jpg) ![h:220px](img/uav-aerostat.jpg)
+Еще немного:
+https://youtu.be/0aHXrUHTxP0?t=112
+
+---
+
+![bg](img/drone-path.png)
 
 
 ---
@@ -152,6 +160,8 @@ https://www.youtube.com/watch?v=0aHXrUHTxP0
 # <!-- fit -->Никак :)
 Смирись и лучше проверяй _ВСЁ_ перед стартом 
 
+
+
 ---
 <!-- _class: lead -->
 
@@ -165,11 +175,135 @@ https://www.youtube.com/watch?v=0aHXrUHTxP0
 
 ![h:550px](img/zagruzheno.png)
 
+
+---
+<!-- _class: diagram -->
+<!-- _paginate: true -->
+
+# Основная идея
+
+![](img/spectrum.jpg)
+
+Источник: https://www.monochromeimaging.com/technical/full-spectrum-ir/
+
+---
+<!-- _class: diagram -->
+<!-- _paginate: true -->
+
+# Основная схема системы
+
+![h:150px](img/deployment-1.png)
+
+
+---
+<!-- _class: lead -->
+
+# Ожидание VS Реальность
+
+![h:310px](img/heli.gif) ![h:310px](img/heli2.gif)
+
+---
+<!-- _class: diagram -->
+# Моделирование и макетирование
+![w:850px](img/image105.png)
+
+---
+# Моделирование и макетирование
+
+![h:425px](img/image58.jpg) ![h:425px](img/image64.jpg)
+
+---
+# Конструирование и разработка электроники
+
+![h:100px](img/pcb1.png) ![h:100px](img/pcb2.png)
+
+---
+# Полетная часть
+
+![h:180px](img/drone-1-3.jpg) ![h:180px](img/drone1-2.jpg) ![h:180px](img/drone1-3.jpg)
+
+---
+# Полетная часть: стабилизатор изображения
+
+![h:380px](img/image-stab.jpg) ![h:380px](img/image-stab.gif)
+
+---
+<!-- _class: diagram -->
+
+# Наземная станция: трекер или задача: а где коптер?
+
+![h:550px](img/tracker.jpg)
+
+---
+
+![bg](img/pixel-per-bucket.png)
+
+---
+<!-- _class: diagram -->
+# Тесты поиска очага в кадре
+
+![w:700px](img/basic-image-proc.gif)
+
+
+
+---
+# Суровая реальность
+
+![h:100px](img/image45.gif) ![h:100px](img/image54.gif) ![h:100px](img/image55.gif)
+
+![h:100px](img/image56.gif) ![h:100px](img/image59.gif) ![h:100px](img/image60.gif)
+
+---
+
+![bg w:100%](img/fire-coords.png)
+
+
+---
+<!-- _paginate: false -->
+
+![bg](img/best-screenshot.png)
+
 ---
 <!-- _class: invert -->
 <!-- _paginate: false -->
 
 ![bg w:100%](img/few.png)
+
+---
+<!-- _class: invert -->
+<!-- _paginate: false -->
+
+![bg w:100%](img/650-1.gif)
+
+---
+<!-- _class: invert -->
+<!-- _paginate: false -->
+
+![bg](img/650-2.gif)
+
+---
+<!-- _class: invert -->
+<!-- _paginate: false -->
+
+![bg](img/650-3.gif)
+
+---
+<!-- _class: invert -->
+<!-- _paginate: false -->
+
+![bg](img/jetson.png)
+
+
+---
+<!-- _paginate: false -->
+
+![bg](img/jetson-2.png)
+
+---
+<!-- _paginate: false -->
+
+![bg](img/jetson-1.jpg)
+
 
 ---
 <!-- _class: invert -->
@@ -188,20 +322,63 @@ https://www.youtube.com/watch?v=0aHXrUHTxP0
 
 ![h:650px](img/threads.png)
 
+---
+<!-- _class: invert -->
+<!-- _paginate: false -->
 
+![bg](img/650-1-1.jpg)
+
+---
+<!-- _class: invert -->
+<!-- _paginate: false -->
+
+![bg](img/650-1-2.png)
 
 
 ---
 <!-- _class: invert -->
 <!-- _paginate: false -->
 
+![bg](img/650-vid.gif)
+
+---
+<!-- _class: invert -->
+<!-- _paginate: false -->
+
+![bg](img/650-vid-2.gif)
+
+
+---
+<!-- _class: invert -->
+<!-- _paginate: false -->
+
+![bg](img/bad-filter.gif)
+![bg](img/good-filter.gif)
+
+---
+<!-- _class: invert -->
+<!-- _paginate: false -->
+
+![bg](img/hover.gif)
+
+---
+<!-- _class: invert -->
+<!-- _paginate: false -->
+
+![bg](img/fall-1.gif)
+
+
+---
+<!-- _class: invert -->
+<!-- _paginate: false -->
+
+![h:350px](img/vision.gif) &nbsp; &nbsp; ![h:350px](img/new-stab.gif)
+
+---
+<!-- _class: invert -->
+<!-- _paginate: false -->
+
 ![bg w:100%](img/more.png)
-
-
-
-
-
-
 
 
 
@@ -356,6 +533,12 @@ http://tdk-electro.ru/product/%D1%81%D0%BE%D0%B5%D0%B4%D0%B8%D0%BD%D0%B8%D1%82%D
    __Почему?__: cоревноваться будут прибористы с прибористами
    Появится __ТЗ на прибор__ определения очага: ограничения по массе и габаритам, чертежи системы крепления, интерфейсы
    __Прибор__ перемещает по маршруту дрон организаторов
+
+---
+# Что будет еще?
+
+1. Мастер-класс по задаче  обнаружения очага возгорания в кадре.
+2. ... 
 
 ---
 
