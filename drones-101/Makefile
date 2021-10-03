@@ -12,3 +12,4 @@ clean:
 	rm -rf dist
 	rm -rf build
 	rm -rf builds
+	rm -rf src/diagrams/*.png
