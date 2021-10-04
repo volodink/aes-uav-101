@@ -528,10 +528,7 @@ https://youtu.be/0aHXrUHTxP0?t=112
 
 # **Важность** прецедентов
 
-1. Про беспилотниик который потерялся и самоуничтожился почта России
-
-2. Про позитив: Геоскан и синелифтер.
-![h:100px](img/image74.png)  ![h:100px](img/LOST.png)
+![h:435px](img/image74.png)  ![h:435px](img/LOST.png) ![h:435px](img/cinelifter.jpg)
 
 ---
 
