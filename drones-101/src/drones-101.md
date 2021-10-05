@@ -150,6 +150,7 @@ https://youtu.be/0aHXrUHTxP0?t=112
 ![bg](img/drone-path.png)
 
 ---
+
 <!-- _paginate: false -->
 
 ![bg](img/inge.jpg)
@@ -162,7 +163,7 @@ https://youtu.be/0aHXrUHTxP0?t=112
 2. Поиск людей
 3. Пожаротушение
 
-![h:270px](img/fire-uav.png)  ![h:270px](img/lost.webp)  ![h:270px](img/fire-fight-2.jpg)
+![h:270px](img/fire-uav.png) ![h:270px](img/lost.webp) ![h:270px](img/fire-fight-2.jpg)
 
 Источник: https://www.geekwire.com/2015/drone-helps-fight-washington-state-wildfires-in-latest-demonstration-of-the-technologys-potential/
 
@@ -200,12 +201,14 @@ https://youtu.be/0aHXrUHTxP0?t=112
 ---
 
 # Тепловизоры
+
 ![h:455px](img/flir-1.png)
 Источник: What can I see with my thermal drone? | FLIR DELTA https://www.youtube.com/watch?v=CVE1HJ6n9g8
 
 ---
 
 # Тепловизоры
+
 ![h:550px](img/flir-2.png)
 
 ---
@@ -528,7 +531,7 @@ https://youtu.be/0aHXrUHTxP0?t=112
 
 # **Важность** прецедентов
 
-![h:435px](img/image74.png)  ![h:435px](img/LOST.png) ![h:435px](img/cinelifter.jpg)
+![h:435px](img/image74.png) ![h:435px](img/LOST.png) ![h:435px](img/cinelifter.jpg)
 
 ---
 
@@ -587,6 +590,7 @@ https://youtu.be/0aHXrUHTxP0?t=112
 - поощряйте инициативность в виде _принести свою изоленту )_
 
 ---
+
 <!-- _class: diagram -->
 
 # Больше пропеллеров - лучше
@@ -656,7 +660,7 @@ https://youtu.be/0aHXrUHTxP0?t=112
 https://zavod-elecon.ru/catalog/2rmt-2rmdt/
 http://tdk-electro.ru/product/%D1%81%D0%BE%D0%B5%D0%B4%D0%B8%D0%BD%D0%B8%D1%82%D0%B5%D0%BB%D0%B8-%D1%80%D1%81-%D1%80%D1%81%D0%B3-%D1%80%D1%81%D0%B3%D1%81-%D1%80%D1%81%D0%B3%D1%81%D0%BF/
 
----
+<!-- ---
 
 # Олег, придумай заголовок!
 
@@ -664,31 +668,32 @@ http://tdk-electro.ru/product/%D1%81%D0%BE%D0%B5%D0%B4%D0%B8%D0%BD%D0%B8%D1%82%D
 2. Инструменты работы команды программистов: GitLab (CI/CD), CMake, make, pyTest
 3. Graphana
 4. Автоматизируй все!
-5. Документация: вы помните все, ага, но запишите)
+5. Документация: вы помните все, ага, но запишите) -->
 
 ---
 
-# Agile: принципы
+# Инструменты работы команды программистов
+
+1. Используйте систему контроля версий Git
+2. GitLab, CMake, make, pyTest
+3. Автоматизируйте все, что можно!
+4. Адоптируйте практику непрерывной интеграции (CI/CD)
+
+![w:800px](img/ci_cd.png)
 
 ---
 
-# Инструменты работы команды программистов:
+# Graphana - отображение данных
 
-# GitLab, CMake, make, pyTest
-
----
-
-# Graphana
+![h:550px](img/grafanadeb01.webp)
 
 ---
 
-# Автоматизируй все!
+# Документация
 
-# (CI/CD)
-
----
-
-# Документация: вы помните все, ага, но запишите)
+1. Вы помните все
+2. Это не так! :)
+3. Документируйте: код, железо, процессы, чек-листы
 
 ---
 
