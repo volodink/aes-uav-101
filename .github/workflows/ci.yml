@@ -29,16 +29,13 @@ jobs:
           java-version: '11' # The OpenJDK version to make available on the path
           architecture: 'x64' # defaults to 'x64'
 
-      # - name: Install some stuff
-      #   run: apt-get update && apt-get install -y wget gnupg
-
       - name: Install dependencies
         run: |
           sudo apt-get update && sudo apt-get install -y graphviz gnupg curl zsh wget build-essential gnupg fonts-ipafont-gothic fonts-wqy-zenhei fonts-thai-tlwg fonts-kacst fonts-freefont-ttf libxss1
 
       # - name: Install dependencies
       #   run: |
-      #     apt-get update && apt-get install -y gnupg curl zsh wget build-essential gnupg fonts-ipafont-gothic fonts-wqy-zenhei fonts-thai-tlwg fonts-kacst fonts-freefont-ttf libxss1
+      #     apt-get update && apt-get install -y zip graphviz gnupg curl zsh wget build-essential gnupg fonts-ipafont-gothic fonts-wqy-zenhei fonts-thai-tlwg fonts-kacst fonts-freefont-ttf libxss1
 
       - name: Install Google Chrome
         run: |
@@ -67,14 +64,9 @@ jobs:
           GTOKEN_PASS: ${{ secrets.CI_GDRIVE_TOKEN_PASSPHRASE }}
         run: |
           mkdir -p ~/.gdrive
-          gpg --quiet --batch --yes --decrypt --passphrase="q1w2e3r4" --output ~/.gdrive/token_v2.json .github/workflows/token_v2.json.gpg
-      
-      - name: GDrive token file list
-        run: cat ~/.gdrive/token_v2.json
+          gpg --quiet --batch --yes --decrypt --passphrase="$CI_GDRIVE_TOKEN_PASSPHRASE" --output ~/.gdrive/token_v2.json .github/workflows/token_v2.json.gpg
 
       - name: Install GDrive
-        env:
-          GTOKEN_PASS: ${{ secrets.CI_GDRIVE_TOKEN_PASSPHRASE }}
         run: |
           wget https://github.com/prasmussen/gdrive/releases/download/2.1.1/gdrive_2.1.1_linux_386.tar.gz
           tar xzvf gdrive_2.1.1_linux_386.tar.gz

@@ -5,10 +5,14 @@ skinparam nodesep 50
 
 ' left to right direction
 
+cloud "Fire" as FIRE
+circle "IR Filter" as Filter
 rectangle "RGB2GRAY" as GRAY
 rectangle "Размытие \nпо Гауссу" as GAUSS
 rectangle "Пороговая \nфильтрация \n(бинаризация)" as THRESHOLD
 
+FIRE -> Filter
+Filter -> Camera
 Camera -> GRAY: "bgr\nframe"
 GRAY -> GAUSS: "gray\nframe"
 GAUSS -> THRESHOLD
